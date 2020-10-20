@@ -23,8 +23,7 @@ public class LoginFilter implements Filter {
 		// TODO Auto-generated method stub
 	}
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)throws IOException, ServletException {
 		System.out.println("LoginFilter 실행 : session 검사");
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		if(session.getAttribute("loginStaff") == null) {
