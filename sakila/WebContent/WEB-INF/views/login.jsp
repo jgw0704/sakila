@@ -9,14 +9,14 @@
 <script>
 	$(document).ready(function(){
 		$("#btn").click(function(){
-			if($("#ID").val()=="") {
-				alert("아이디를 입력해주세요");
+			if($("#email").val()=="") {
+				alert("이메일을 입력해주세요");
 				return;
-			} else if($("#PW").val()=="") {
+			} else if($("#password").val()=="") {
 				alert("패스워드를 입력해주세요");
 				return;
 			}
-			$("#LoginAction").submit();
+			$("#loginAction").submit();
 		});
 	});
 </script>
@@ -25,12 +25,12 @@
 	<div>
 		오늘 접속자 수 : ${stats.cnt} / 전체 접속자 수 : ${totalCount}
 	</div>
-	<form>
+	<form method="post" id="loginAction" action="${pageContext.request.contextPath}/">
 		<div>
-			<input type="text" placeholder="ID" id="ID">
+			<input type="text" placeholder="Email입력" name="email" id="email">
 		</div>
 		<div>
-			<input type="password" placeholder="PW" id="PW">
+			<input type="password" placeholder="PW입력" name="password" id="password">
 		</div>
 		<div>
 			<button type="button" id="btn">Log-in</button>
