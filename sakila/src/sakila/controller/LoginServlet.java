@@ -15,6 +15,8 @@ import sakila.service.StatsService;
 import sakila.vo.Staff;
 import sakila.vo.Stats;
 
+// Mike.Hillyer@sakilastaff.com
+
 @WebServlet({"/","/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 	private StatsService statsService;
@@ -31,9 +33,9 @@ public class LoginServlet extends HttpServlet {
 		
 		Stats stats = new Stats();
 		stats =(Stats)map.get("returnStats");
-		long totalCount = (long)map.get("totalCount");
+		// long totalCount = (long)map.get("totalCount");
 		request.setAttribute("stats",stats);
-		request.setAttribute("totalCount", totalCount);
+		// request.setAttribute("totalCount", totalCount);
 		
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
